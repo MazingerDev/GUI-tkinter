@@ -52,11 +52,22 @@ class calculator:
     def special_button(self):
         self.equal_button()
         self.clear_button()
-
+        self.bracket()
 
     def add_to_lable(self, value):
         self.current += str(value)
         self.update_lable()
+        
+        
+        
+    def bracket(self):
+        button1 =tk.Button(self.button_frame,text ='(',bg = "#FFFFFF",fg = lablec,
+                font= default_font,borderwidth =0, command = lambda a='(': self.add_operator_to_lable(a) )
+        button1.grid(row= 0,column=2,sticky= tk.NSEW)
+
+        button2 =tk.Button(self.button_frame,text =')',bg = "#FFFFFF",fg = lablec,
+                font= default_font,borderwidth =0, command =lambda q= ')': self.add_operator_to_lable(q) )
+        button2.grid(row= 0,column=3,sticky= tk.NSEW)
 
 
     def add_operator_to_lable(self,operator):
