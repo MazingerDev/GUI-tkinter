@@ -64,7 +64,7 @@ class calculator:
             self.total += self.current
             self.current =""
             self.update_total_lable()
-            self.update_lable
+            self.update_lable()
 
 
     def create_lable(self):
@@ -98,6 +98,7 @@ class calculator:
             self.current =str(eval(self.total))
 
             self.total = ""
+            self.update_total_lable()
         except Exception as e :
             self.current = 'error'
         finally:
